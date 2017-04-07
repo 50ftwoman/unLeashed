@@ -2,11 +2,11 @@
 
 ![wireframe](./assets/horsedog2.jpg)
 
-##Introduction
+## Introduction
 
-unLeashed is intended to be a user friendly application for dog and horse owners to easily find campgrounds in the United States that allow animals. Users will be able to search for campgrounds using a variety of filters, and store those campgrounds to their profile for future reference. Users will also have the option to redirect to ReserveAmerica to view available dates and reserve campgrounds.
+**unLeashed** is intended to be a user friendly application for dog and horse owners to easily find campgrounds in the United States that allow animals. Users will be able to search for campgrounds using a variety of filters, and store those campgrounds to their profile for future reference. Users will also have the option to redirect to ReserveAmerica to view available dates and reserve campgrounds.
 
-##Technology Used
+## Technology Used
 
 * MongoDB
 * Express
@@ -17,10 +17,10 @@ unLeashed is intended to be a user friendly application for dog and horse owners
 * 3rd Party API
 * Bootstrap
 
-##Trello
+## Trello
 [Click here for Trello](https://trello.com/b/0TamfD4F/unleashed)
 
-##MVP
+## MVP
 * Allow users to create an account
 * Allow users to search for pet-friendly campgrounds
 * Allow users to store campgrounds to a list on their profile
@@ -31,5 +31,5 @@ unLeashed is intended to be a user friendly application for dog and horse owners
  ![wireframe1](./assets/landing.JPG)
 ![wireframe2](./assets/results.JPG)
 
-##ERD
+## ERD
 ![wireframe3](./assets/erd.JPG)
