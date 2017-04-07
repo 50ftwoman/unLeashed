@@ -32,4 +32,4 @@
 ![wireframe2](./assets/results.JPG)
 
 ## ERD
-![wireframe3](./assets/erd.JPG)
+![wireframe3](./assets/ERD.jpg)
