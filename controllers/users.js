@@ -9,7 +9,7 @@ function postSignup(req, res) {
 	console.log(req.params)
 
 	var signUpStrategy = passport.authenticate('local-signup', {
-		successRedirect: '/',
+		successRedirect: '/home',
 		failureRedirect: '/signup',
 		failureFlash: true
 	});
