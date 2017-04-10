@@ -9,7 +9,7 @@ var {home, getSignup, postSignup, getLogin, postLogin, getLogout, getFacebook, g
     {profile} = require('../controllers/staticpages'),
     // {search, postSearch} = require('../controllers/index'),
     {indexApi} = require('../controllers/api'),
-    {searchCamp, searchCampState} = require('../controllers/camps');
+    {searchCamp, searchCampState, createCamp, deleteCamp} = require('../controllers/camps');
 
 function authenticatedUser(req, res, next) {
   if (req.isAuthenticated()) return next();
@@ -22,6 +22,12 @@ router.route('/')
 
 router.route('/index')
   .get(authenticatedUser, searchCamp);
+
+router.route('/camp')
+  .post(createCamp)
+
+router.route('/camp/:id')
+  .delete(deleteCamp)
 
 router.route('/profile')
   .get(profile);
