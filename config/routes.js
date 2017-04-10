@@ -6,10 +6,10 @@ var express    = require('express'),
 
 var {home, getSignup, postSignup, getLogin, postLogin, getLogout, getFacebook, getFacebookCallback} = require('../controllers/users'),
     {profile} = require('../controllers/staticpages'),
-    {index, search, postSearch} = require('../controllers/index'),
+    {search, postSearch} = require('../controllers/index'),
     {indexApi} = require('../controllers/api');
 
-functin authenticatedUser(res, res, next) {
+function authenticatedUser(res, res, next) {
   if (req.isAuthenticated()) return next();
 
   res.redirect('/');
@@ -18,8 +18,8 @@ functin authenticatedUser(res, res, next) {
 router.route('/')
   .get(home);
 
-router.route('/index')
-  .get(authenticatedUser, index);
+// router.route('/index')
+//   .get(authenticatedUser, index);
 
 router.route('/profile')
   .get(profile);
@@ -35,9 +35,9 @@ router.route('/login')
 router.route('/logout')
   .get(getLogout);
 
-router.route('/search')
-  .get(search)
-  .post(postSearch);
+// router.route('/search')
+//   .get(search)
+//   .post(postSearch);
 
 router.route('/api')
   .get(indexApi);
