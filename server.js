@@ -1,4 +1,5 @@
-var express      = require('express'),
+var http         = require('request'),
+    express      = require('express'),
     app          = express(),
     mongoose     = require('mongoose'),
     passport     = require('passport'),
@@ -19,10 +20,10 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser());
 
-app.set('view engine', 'ejs');
-app.use(ejsLayouts);
-app.set('views', './views');
-app.use(express.status(path.join(__dirname, public)));
+// app.set('view engine', 'ejs');
+// app.use(ejsLayouts);
+// app.set('views', './views');
+// app.use(express.status(path.join(__dirname, public)));
 
 app.use(session({ secret: 'unleashed', cookie: {maxAge: 14400000} }));
 app.use(passport.initialize());
