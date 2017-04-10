@@ -7,7 +7,8 @@ var express    = require('express'),
 var {home, getSignup, postSignup, getLogin, postLogin, getLogout, getFacebook, getFacebookCallback} = require('../controllers/users'),
     {profile} = require('../controllers/staticpages'),
     {search, postSearch} = require('../controllers/index'),
-    {indexApi} = require('../controllers/api');
+    {indexApi} = require('../controllers/api'),
+    {searchCamp, searchCampState} = require('../controllers/camps');
 
 function authenticatedUser(res, res, next) {
   if (req.isAuthenticated()) return next();
@@ -35,9 +36,9 @@ router.route('/login')
 router.route('/logout')
   .get(getLogout);
 
-// router.route('/search')
-//   .get(search)
-//   .post(postSearch);
+router.route('/search')
+  .get(searchCamp)
+  .post(searchCampState);
 
 router.route('/api')
   .get(indexApi);

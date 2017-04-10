@@ -13,7 +13,7 @@ var userSchema = mongoose.Schema({
     email    : String,
     name     : String,
   },
-  camps      : [Camp.schema]
+    camps    : [Camp.schema]
 });
 
 // adds passport encryption
