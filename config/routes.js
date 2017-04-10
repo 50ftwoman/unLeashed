@@ -6,7 +6,7 @@ var express    = require('express'),
 
 var {home, getSignup, postSignup, getLogin, postLogin, getLogout, getFacebook, getFacebookCallback} = require('../controllers/users'),
     {profile} = require('../controllers/staticpages'),
-    {search, postSearch} = require('../controllers/index'),
+    // {search, postSearch} = require('../controllers/index'),
     {indexApi} = require('../controllers/api'),
     {searchCamp, searchCampState} = require('../controllers/camps');
 
@@ -19,8 +19,8 @@ function authenticatedUser(res, res, next) {
 router.route('/')
   .get(home);
 
-// router.route('/index')
-//   .get(authenticatedUser, index);
+router.route('/index')
+  .get(authenticatedUser, searchCamp);
 
 router.route('/profile')
   .get(profile);
