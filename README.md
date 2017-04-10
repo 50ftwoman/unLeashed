@@ -1,6 +1,6 @@
 # unLeashed
 
-![wireframe](./assets/horsedog2.jpg)
+![wireframe](./public/assets/horsedog2.jpg)
 
 ## Introduction
 
@@ -28,8 +28,8 @@
 * Allow users to share campgrounds to social media
  
  ##Wireframes
- ![wireframe1](./assets/landing.JPG)
-![wireframe2](./assets/results.JPG)
+ ![wireframe1](./public/assets/landing.JPG)
+![wireframe2](./public/assets/results.JPG)
 
 ## ERD
-![wireframe](./assets/ERD.JPG)
+![wireframe](./public/assets/ERD.JPG)
