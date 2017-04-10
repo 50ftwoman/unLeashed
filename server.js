@@ -19,29 +19,46 @@ require('dotenv').config();
 var db = process.env.MONGODB_URL || 'mongodb://localhost/unleashed';
 mongoose.connect(db);
 
-const store = new MongoDBStore({
-  uri: db,
-  collection: 'sessions'
-});
 
-// app.use(express.static(clientDir))
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
-app.use(session({
-  secret: 'boooooooooom',
-  cookie: {maxAge: 60000000},
-  resave: true,
-  saveUninitialized: false,
-  store: store
-}))
-app.use(passport.initialize())
-app.use(passport.session())
+app.use(logger('dev'));
+app.use(cookieParser());
+app.use(bodyParser());
+
+app.set('view engine', 'ejs');
+app.use(ejsLayouts);
+app.set('views', './views');
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({ secret: 'unleashed', cookie: {maxAge: 14400000} }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
-// require('./config/passport')(passport);
 
+
+// const store = new MongoDBStore({
+//   uri: db,
+//   collection: 'sessions'
+// });
+
+// app.use(express.static(clientDir))
+// app.use(logger('dev'))
+// app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(cookieParser())
+// app.use(session({
+//   secret: 'boooooooooom',
+//   cookie: {maxAge: 60000000},
+//   resave: true,
+//   saveUninitialized: false,
+//   store: store
+// }))
+// app.use(passport.initialize())
+// app.use(passport.session())
+// app.use(flash());
+
+require('./config/passport')(passport);
+//
 app.use(function (req, res, next) {
   global.user = req.user;
   next();

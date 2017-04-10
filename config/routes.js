@@ -3,6 +3,7 @@ var express    = require('express'),
     request    = require('request')
     bodyParser = require('body-parser'),
     passport   = require('passport')
+    // usersController = require('../controllers/users.js')
 
 var {home, getSignup, postSignup, getLogin, postLogin, getLogout, getFacebook, getFacebookCallback} = require('../controllers/users'),
     {profile} = require('../controllers/staticpages'),
@@ -10,7 +11,7 @@ var {home, getSignup, postSignup, getLogin, postLogin, getLogout, getFacebook, g
     {indexApi} = require('../controllers/api'),
     {searchCamp, searchCampState} = require('../controllers/camps');
 
-function authenticatedUser(res, res, next) {
+function authenticatedUser(req, res, next) {
   if (req.isAuthenticated()) return next();
 
   res.redirect('/');
