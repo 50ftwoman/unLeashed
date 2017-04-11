@@ -5,7 +5,7 @@ var Camp = require('../models/camp.js'),
 //XML to JSON
 var parseString = require('xml2js').parseString;
 
-function index(req, res) {
+function indexCamps(req, res) {
   Camp.find({}, function(err, camps) {
     if (err) res.status(404).send(err)
 
@@ -69,11 +69,23 @@ function deleteCamp(req, res) {
   })
 }
 
+// API actions
+
+function indexCampsJSON(req, res) {
+  http('http://api.amp.active.com/camping/campgrounds/?pets=3010&api_key=hpsp3pj5sexdxpn3d36w57h9&pstate=CA', function(err, response, body) {
+    parseString(body, function (err, result) {
+      console.dir(result)
+      res.json(result)
+    })
+  })
+}
 
 module.exports = {
   searchCamp      : searchCamp,
   searchCampState : searchCampState,
   createCamp      : createCamp,
   deleteCamp      : deleteCamp,
-  index           : index
+  indexCamps      : indexCamps,
+
+  indexCampsJSON  : indexCampsJSON,
 }

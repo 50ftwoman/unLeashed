@@ -31,7 +31,6 @@ app.set('view engine', 'html');
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-var routes = require('./config/routes');
 
 app.use(cors());
 
@@ -49,7 +48,11 @@ app.use(function (req, res, next) {
 })
 
 
-app.use(routes);
+var routes = require('./config/routes');
+app.use('/', routes);
+
+var api_routes = require('./config/api_routes');
+app.use('/api/', api_routes);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
