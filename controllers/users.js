@@ -2,7 +2,7 @@ var passport = require('passport');
 
 //GET /signup
 function getSignup(req, res) {
-	res.render('signup.ejs', { message: req.flash('signupMessage') });
+	res.render('/signup', { message: req.flash('signupMessage') });
 }
 
 function postSignup(req, res) {
@@ -10,7 +10,7 @@ function postSignup(req, res) {
 
 	var signUpStrategy = passport.authenticate('local-signup', {
 		successRedirect: '/home',
-		failureRedirect: '/signup',
+		failureRedirect: './signup.html',
 		failureFlash: true
 	});
 
@@ -19,7 +19,7 @@ function postSignup(req, res) {
 
 function getLogin(req, res) {
 	console.log('logged in')
-	res.render('login.ejs', { message: req.flash('loginMessage') });
+	res.render('/login', { message: req.flash('loginMessage') });
 }
 
 function postLogin(req, res) {

@@ -3,11 +3,9 @@ var express    = require('express'),
     request    = require('request')
     bodyParser = require('body-parser'),
     passport   = require('passport')
-    // usersController = require('../controllers/users.js')
 
 var {home, getSignup, postSignup, getLogin, postLogin, getLogout, getFacebook, getFacebookCallback} = require('../controllers/users'),
     {profile} = require('../controllers/staticpages'),
-    // {search, postSearch} = require('../controllers/index'),
     {indexApi} = require('../controllers/api'),
     {searchCamp, searchCampState, createCamp, deleteCamp} = require('../controllers/camps');
 
@@ -20,7 +18,7 @@ function authenticatedUser(req, res, next) {
 router.route('/')
   .get(home);
 
-router.route('/index')
+router.route('/home')
   .get(authenticatedUser, searchCamp);
 
 router.route('/camp')
