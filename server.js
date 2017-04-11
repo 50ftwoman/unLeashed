@@ -18,7 +18,7 @@ var http           = require('request'),
 
 require('dotenv').config();
 
-var db = process.env.MONGODB_URL || 'mongodb://localhost/unleashed';
+var db = process.env.MONGODB_URI || 'mongodb://localhost/unleashed';
 mongoose.connect(db);
 
 
