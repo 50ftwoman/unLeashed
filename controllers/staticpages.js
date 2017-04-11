@@ -1,5 +1,5 @@
 function profile(req, res) {
-  res.render('profile.ejs')
+  res.render('profile.html')
 }
 
 module.exports = {

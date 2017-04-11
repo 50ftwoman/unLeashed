@@ -2,15 +2,15 @@ var passport = require('passport');
 
 //GET /signup
 function getSignup(req, res) {
-	res.render('/signup', { message: req.flash('signupMessage') });
+	res.render('signup.html', { message: req.flash('signupMessage') });
 }
 
 function postSignup(req, res) {
 	console.log(req.params)
 
 	var signUpStrategy = passport.authenticate('local-signup', {
-		successRedirect: '/home',
-		failureRedirect: './signup.html',
+		successRedirect: 'home.html',
+		failureRedirect: 'signup.html',
 		failureFlash: true
 	});
 
@@ -19,13 +19,13 @@ function postSignup(req, res) {
 
 function getLogin(req, res) {
 	console.log('logged in')
-	res.render('/login', { message: req.flash('loginMessage') });
+	res.render('login.html', { message: req.flash('loginMessage') });
 }
 
 function postLogin(req, res) {
 	var loginProperty = passport.authenticate('local-login', {
-		successRedirect: '/index',
-		failureRedirect: '/login',
+		successRedirect: 'index.html',
+		failureRedirect: 'login.html',
 		failureFlash: true
 	});
 
@@ -54,8 +54,8 @@ function getLogout(req, res) {
  // handle the callback after facebook has authenticated the user
  function getFacebookCallback(request, response) {
    var loginProperty = passport.authenticate('facebook', {
-     successRedirect : '/index',
-     failureRedirect : '/login'
+     successRedirect : 'index.html',
+     failureRedirect : 'login.html'
    });
 
    return loginProperty(request, response);
@@ -64,7 +64,7 @@ function getLogout(req, res) {
 //=================FACEBOOK==========================
 
 function home(req, res) {
-	res.render('home.ejs');
+	res.render('home.html');
 }
 
 module.exports = {
