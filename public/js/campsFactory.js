@@ -8,7 +8,7 @@ function CampFactory($http){
 
 
   //by state in US
-  function index(state) {
+  function index(state = '') {
     return $http.get('/api?state=' + state )
   }
 
