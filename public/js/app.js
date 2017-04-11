@@ -1,25 +1,17 @@
 angular
   .module('campsApp', ['ui.router'])
-  .config(LeashRouter)
+  .controller('CampController', CampController)
 
-function BeanRouter($stateProvider, $urlRouterProvider){
+CampController.$inject = ['CampFactory']
 
-  // Front end routes using angular ui.router:
-  $stateProvider
-  .state('index', {
-    url: '/',
-    templateUrl: 'camps_template/index.html'
-  })
-  .state('new', {
-    url: '/new',
-    templateUrl: 'camps_template/search.html'
-  });
-  // .state('show', {
-  //   url: '/beans/:id',
-  //   templateUrl: 'camps_template/show.html'
-  // });
+function CampController(CampFactory) {
+  var self = this
+  self.allCamps = []
 
-  // Default (fallback) route:
-  $urlRouterProvider.otherwise('/')
+  CampFactory.index()
+    .success(function(data) {
+      self.allCamps = data
+      console.log(self.allCamps)
+    });
 
 }

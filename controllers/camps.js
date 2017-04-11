@@ -41,7 +41,7 @@ function createCamp(req, res) {
     if (err) throw err;
 
     users.camps.push({
-      name       : req.body.name,
+      name       : req.body.facilityName,
       state      : req.body.state
     });
 
@@ -75,7 +75,12 @@ function indexCampsJSON(req, res) {
   http('http://api.amp.active.com/camping/campgrounds/?pets=3010&api_key=hpsp3pj5sexdxpn3d36w57h9&pstate=CA', function(err, response, body) {
     parseString(body, function (err, result) {
       console.dir(result)
-      res.json(result)
+      var results = result.resultset.result
+      var top20 = []
+      for (var i = 0; i < 20; i++) {
+        top20.push(results[i]['$'])
+      }
+      res.json(top20)
     })
   })
 }
@@ -87,5 +92,5 @@ module.exports = {
   deleteCamp      : deleteCamp,
   indexCamps      : indexCamps,
 
-  indexCampsJSON  : indexCampsJSON,
+  indexCampsJSON  : indexCampsJSON
 }
