@@ -24,7 +24,7 @@ mongoose.connect(db);
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public/')));
-app.set('views', __dirname + '/public/views');
+app.set('views', __dirname + '/public/camps_template');
 app.engine('html', engines.mustache)
 app.set('view engine', 'html');
 

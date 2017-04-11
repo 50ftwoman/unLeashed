@@ -1,18 +1,24 @@
 angular
   .module('campsApp', ['ui.router'])
-    .config('MainRouter');
+    .config(MainRouter);
+
+    // CampController.$inject = ['CampFactory']
 
     MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function MainRouter($stateProvider, $urlRouterProvider) {
+
+
+
       $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: 'index.html'
+          templateUrl: '../camps_template/index.html'
         })
         .state('search', {
           url: '/search',
-          templateUrl: 'search.html'
+          templateUrl: '../camps_template/search.html'
         });
-        $urlRouterProvider.otherwise('/')
+
+        $urlRouterProvider.otherwise('/');
     }

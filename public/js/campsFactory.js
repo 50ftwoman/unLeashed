@@ -1,5 +1,4 @@
-
-  angular.module('campsApp')
+angular.module('campsApp')
   .factory('CampFactory', CampFactory)
 
 CampFactory.$inject = ['$http']
@@ -7,12 +6,8 @@ CampFactory.$inject = ['$http']
 function CampFactory($http){
   var apiUrl = '/api'
 
-  return {
-    index   : index,
-    show    : show,
-    getInfo : getInfo
-  }
 
+  //by state in US
   function index(state) {
     return $http.get('/api?state=' + state )
   }
@@ -24,4 +19,11 @@ function CampFactory($http){
   // function getInfo(camps) {
   //   return $http.get(camps.facilityName + camps.facilityPhoto)
   // }
+
+  return {
+    index   : index,
+    show    : show
+    // getInfo : getInfo
+  }
+
 }
