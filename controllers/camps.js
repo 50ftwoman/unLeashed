@@ -72,7 +72,8 @@ function deleteCamp(req, res) {
 // API actions
 
 function indexCampsJSON(req, res) {
-  http('http://api.amp.active.com/camping/campgrounds/?pets=3010&api_key=hpsp3pj5sexdxpn3d36w57h9&pstate=CA', function(err, response, body) {
+  var state = req.query.state
+  http('http://api.amp.active.com/camping/campgrounds/?pstate=' + state + '&pets=3010&api_key=hpsp3pj5sexdxpn3d36w57h9', function(err, response, body) {
     parseString(body, function (err, result) {
       console.dir(result)
       var results = result.resultset.result

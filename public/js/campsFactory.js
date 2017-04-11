@@ -12,8 +12,8 @@ function CampFactory($http){
     getInfo : getInfo
   }
 
-  function index() {
-    return $http.get('/api')
+  function index(state) {
+    return $http.get('/api?state=' + state )
   }
 
   function show() {
