@@ -4,10 +4,9 @@ var express    = require('express'),
     bodyParser = require('body-parser'),
     passport   = require('passport')
 
-var {home, getSignup, postSignup, getLogin, postLogin, getLogout, getFacebook, getFacebookCallback} = require('../controllers/users'),
-    {profile} = require('../controllers/staticpages'),
+var {getSignup, postSignup, getLogin, postLogin, getLogout, getFacebook, getFacebookCallback} = require('../controllers/users'),
     {indexApi} = require('../controllers/api'),
-    {searchCamp, searchCampState, createCamp, deleteCamp} = require('../controllers/camps');
+    {index, searchCamp, searchCampState, createCamp, deleteCamp} = require('../controllers/camps');
 
 function authenticatedUser(req, res, next) {
   if (req.isAuthenticated()) return next();
@@ -16,34 +15,11 @@ function authenticatedUser(req, res, next) {
 }
 
 router.route('/')
-  .get(home);
-
-router.route('/home')
-  .get(authenticatedUser, searchCamp);
-
-router.route('/camp')
+  .get(index)
   .post(createCamp)
 
-router.route('/camp/:id')
-  .delete(deleteCamp)
-
-router.route('/profile')
-  .get(profile);
-
-router.route('/signup')
-  .get(getSignup)
-  .post(postSignup);
-
-router.route('/login')
-  .get(getLogin)
-  .post(postLogin);
-
-router.route('/logout')
-  .get(getLogout);
-
-router.route('/search')
-  .get(searchCamp)
-  .post(searchCampState);
+router.route('/:id')
+  .delete(deleteCamp);
 
 router.route('/api')
   .get(indexApi);
