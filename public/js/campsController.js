@@ -8,9 +8,9 @@ function CampController(CampFactory) {
   var self = this
   self.allCamps = []
   self.getCamps = getCamps
-  self.selectedCamp = "test"
+  // self.selectedCamp = "test"
   self.setSelectedCamp = setSelectedCamp
-  self.test = "test"
+  // self.test = "test"
 
   function getCamps(state) {
     var state = state.toUpperCase()
@@ -28,7 +28,7 @@ function CampController(CampFactory) {
     // console.log(camp.contractID)
     CampFactory.show(camp)
       .success(function(data) {
-        self.selectedCamp = data.detailDescription['$'].description
+        self.selectedCamp = data.detailDescription['$']
         console.log(self.selectedCamp)
       })
   }
