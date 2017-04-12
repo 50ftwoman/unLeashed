@@ -27,6 +27,10 @@ angular
           url: '/signup',
           templateUrl: '../camps_template/signup.html'
         })
+        .state('campinfo', {
+          url: '/campinfo',
+          templateUrl: '../camps_template/campinfo.html'
+        });
 
         $urlRouterProvider.otherwise('/');
     }
