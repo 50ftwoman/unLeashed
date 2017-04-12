@@ -10,10 +10,12 @@ function CampController(CampFactory) {
   self.getCamps = getCamps
 
   function getCamps(state) {
+    var state = state.toUpperCase()
     CampFactory.index(state)
     .success(function(data) {
       self.allCamps = data
       console.log(self.allCamps)
+      console.log(self.allCamps[1])
     });
   }
 }

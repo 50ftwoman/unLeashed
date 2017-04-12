@@ -7,9 +7,21 @@
     <input class="form-control input-lg" placeholder="search by state" ng-model="campCtrl.state" type="text" />
     <!-- <span class="input-group=btn"> -->
     <button class="btn btn-info btn-lg" type="button">
-      <i class="glyphicon glyphicon-search"></i>
+      <!-- <i class="glyphicon glyphicon-search"></i> -->
     </button>
   <!-- </span>  -->
   </form>
-<!-- </div> -->
 </div>
+<ul>
+  <li ng-repeat="camp in campCtrl.allCamps">
+    {{camp.facilityName}}
+    <img ng-src="{{'http://www.reserveamerica.com' + camp.faciltyPhoto}}">
+  </li>
+</ul>
+
+</div>
+
+
+<!--
+<ng-repeat="camp in campCtrl">
+  <td>{{camp.name}} -->
