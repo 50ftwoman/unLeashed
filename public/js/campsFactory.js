@@ -12,8 +12,8 @@ function CampFactory($http){
     return $http.get('/api?state=' + state )
   }
 
-  function show() {
-    return $http.get(apiUrl + '/camps' )
+  function show(camp) {
+    return $http.get(apiUrl + '/camp?campID=' + camp.contractID + '&facilityID=' + camp.facilityID )
   }
 
   // function getInfo(camps) {

@@ -4,7 +4,9 @@ var express    = require('express'),
     bodyParser = require('body-parser'),
     passport   = require('passport')
 
-var {indexCampsJSON} = require('../controllers/camps');
+var {campDetails, indexCampsJSON} = require('../controllers/camps');
+
+
 
 // function authenticatedUser(req, res, next) {
 //   if (req.isAuthenticated()) return next();
@@ -15,8 +17,8 @@ var {indexCampsJSON} = require('../controllers/camps');
   router.route('/')
   .get(indexCampsJSON)
 
-// router.route('/camp')
-//   .post(createCamp);
+router.route('/camp')
+  .get(campDetails);
 //
 // router.route('/camp/:id')
 //   .delete(deleteCamp)

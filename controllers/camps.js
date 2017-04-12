@@ -15,26 +15,26 @@ function indexCamps(req, res) {
 }
 
 
-//list all camps, pet friendly default
-function searchCamp(req, res) {
-  http('http://api.amp.active.com/camping/campgrounds/?pets=3010&api_key=hpsp3pj5sexdxpn3d36w57h9', function(err, response, body) {
-    parseString(body, function (err, result) {
-      console.dir(result)
-      res.json(result)
-    })
-  })
-}
-
-//all camps by state
-function searchCampState(req, res) {
-  var state = req.body.state
-  http('http://api.amp.active.com/camping/campgrounds/?pstate=' + state + '&pets=3010&api_key=hpsp3pj5sexdxpn3d36w57h9', function(err, response, body){
-    parseString(body, function (err, result) {
-      console.dir(result)
-      res.json(result)
-   })
- })
-}
+// //list all camps, pet friendly default
+// function searchCamp(req, res) {
+//   http('http://api.amp.active.com/camping/campgrounds/?pets=3010&api_key=hpsp3pj5sexdxpn3d36w57h9', function(err, response, body) {
+//     parseString(body, function (err, result) {
+//       console.dir(result)
+//       res.json(result)
+//     })
+//   })
+// }
+//
+// //all camps by state
+// function searchCampState(req, res) {
+//   var state = req.body.state
+//   http('http://api.amp.active.com/camping/campgrounds/?pstate=' + state + '&pets=3010&api_key=hpsp3pj5sexdxpn3d36w57h9', function(err, response, body){
+//     parseString(body, function (err, result) {
+//       console.dir(result)
+//       res.json(result)
+//    })
+//  })
+// }
 
 function createCamp(req, res) {
   User.findById(req.user._id, function(err, user) {
@@ -73,37 +73,35 @@ function deleteCamp(req, res) {
 
 function indexCampsJSON(req, res) {
   var state = req.query.state
+  var top20 = []
   http('http://api.amp.active.com/camping/campgrounds/?pstate=' + state + '&pets=3010&api_key=hpsp3pj5sexdxpn3d36w57h9', function(err, response, body) {
     parseString(body, function (err, result) {
       console.dir(result)
       var results = result.resultset.result
-      var top20 = []
       for (var i = 0; i < 5; i++) {
         top20.push(results[i]['$'])
       }
-      res.json(top20)
     })
   })
+  res.json(top20)
 }
 
-// function campDetails(req, res) {
-//   var parkId = req.body.parkId
-//   http('http://api.amp.active.com/camping/campground/details?parkId=' + parkId + '&api_key=ura5qgpj5ggw29u64wewdv5f', function(err, response, body) {
-//     parseString(body, function (err, result) {
-//       console.dir(result)
-//       res.json(result)
-//       })
-//     })
-//   }
+function campDetails(req, res) {
+  var campID = req.query.campID
+  var facilityID = req.query.facilityID
+  http('http://api.amp.active.com/camping/campground/details?contractCode=' + campID + '&parkId=' + facilityID + '&api_key=hpsp3pj5sexdxpn3d36w57h9', function(err, response, body) {
+    parseString(body, function (err, result) {
+      console.dir(result)
+      res.json(result)
+      })
+    })
+  }
 
 
 module.exports = {
-  searchCamp      : searchCamp,
-  searchCampState : searchCampState,
   createCamp      : createCamp,
   deleteCamp      : deleteCamp,
   indexCamps      : indexCamps,
-  // campDetails     : campDetails,
-
+  campDetails     : campDetails,
   indexCampsJSON  : indexCampsJSON
 }

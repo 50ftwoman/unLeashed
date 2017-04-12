@@ -18,7 +18,7 @@
     <!-- <div style="float: right" class="col-md-6"> -->
     <li ng-repeat="camp in campCtrl.allCamps">
       <div class="results">
-      <h3>{{camp.facilityName}}<h3>
+      <a href="#" ng-click="campCtrl.selectedCamp(camp)"> <h3>{{camp.facilityName}}<h3></a>
         <!-- <div style="float: left;" class="col-md-6" id="camp-image-box"> -->
           <img class="camp-image" ng-src="{{'https://www.reserveamerica.com' + camp.faciltyPhoto}}">
           </li>
@@ -28,8 +28,3 @@
 </div>
 </div>
 </div>
-
-
-<!--
-<ng-repeat="camp in campCtrl">
-  <td>{{camp.name}} -->
