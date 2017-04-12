@@ -13,15 +13,14 @@
   </head>
   <body ng-controller="CampController as campCtrl">
    <nav>
-      <a ui-sref="index">Home</a>
+      <a ui-sref="home">Home</a>
       <a ui-sref="search">Search</a>
+      <a ui-sref="about">About</a>
     </nav>
 
     <main ui-view>
     </main>
-     <form ng-submit="campCtrl.getCamps(campCtrl.state)">
-      <input ng-model="campCtrl.state" type="text">
-    </form>
+
 
 
   </body>

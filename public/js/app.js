@@ -13,11 +13,15 @@ angular
       $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: '../camps_template/index.html'
+          templateUrl: '../camps_template/home.html'
         })
         .state('search', {
           url: '/search',
           templateUrl: '../camps_template/search.html'
+        })
+        .state('about', {
+          url: '/about',
+          templateUrl: '../camps_template/about.html'
         });
 
         $urlRouterProvider.otherwise('/');
