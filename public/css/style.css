@@ -23,6 +23,11 @@ li {
   margin-left: 10px;
 }
 
+.loginform {
+  width: 500px;
+  margin: 0 auto;
+}
+
 .results {
   margin: 0 auto;
   padding: 10px;
