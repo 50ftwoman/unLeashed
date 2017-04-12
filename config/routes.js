@@ -14,9 +14,17 @@ function authenticatedUser(req, res, next) {
   res.redirect('/');
 }
 
+router.route('/signup')
+	.get(getSignup)
+	.post(postSignup);
+
+router.route('/login')
+	.get(getLogin)
+	.post(postLogin);
+
 router.route('/')
   .get(indexCamps)
-  .post(createCamp)
+  .post(createCamp);
 
 router.route('/:id')
   .delete(deleteCamp);
@@ -27,6 +35,8 @@ router.route('/auth/facebook')
 router.route('/auth/facebook/callback')
   .get(getFacebookCallback)
 
+// router.route('/users')
+//   .get(users)
 
 
 // router.route('/camp')

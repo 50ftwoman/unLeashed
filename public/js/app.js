@@ -22,7 +22,11 @@ angular
         .state('about', {
           url: '/about',
           templateUrl: '../camps_template/about.html'
-        });
+        })
+        .state('signup', {
+          url: '/signup',
+          templateUrl: '../camps_template/signup.html'
+        })
 
         $urlRouterProvider.otherwise('/');
     }

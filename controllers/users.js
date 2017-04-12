@@ -9,8 +9,8 @@ function postSignup(req, res) {
 	console.log(req.params)
 
 	var signUpStrategy = passport.authenticate('local-signup', {
-		successRedirect: 'home.html',
-		failureRedirect: 'signup.html',
+		successRedirect: '/#/home',
+		failureRedirect: '/#/signup',
 		failureFlash: true
 	});
 
@@ -24,8 +24,8 @@ function getLogin(req, res) {
 
 function postLogin(req, res) {
 	var loginProperty = passport.authenticate('local-login', {
-		successRedirect: 'index.html',
-		failureRedirect: 'login.html',
+		successRedirect: '/#/home',
+		failureRedirect: '/#/login',
 		failureFlash: true
 	});
 
@@ -54,8 +54,8 @@ function getLogout(req, res) {
  // handle the callback after facebook has authenticated the user
  function getFacebookCallback(request, response) {
    var loginProperty = passport.authenticate('facebook', {
-     successRedirect : 'index.html',
-     failureRedirect : 'login.html'
+     successRedirect : '/#/home',
+     failureRedirect : '/#/login'
    });
 
    return loginProperty(request, response);
@@ -64,7 +64,7 @@ function getLogout(req, res) {
 //=================FACEBOOK==========================
 
 function home(req, res) {
-	res.render('home.html');
+	res.render('/#/home');
 }
 
 module.exports = {

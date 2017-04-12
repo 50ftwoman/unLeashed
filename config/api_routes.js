@@ -12,7 +12,7 @@ var {indexCampsJSON} = require('../controllers/camps');
 //   res.redirect('/');
 // }
 
-router.route('/')
+  router.route('/')
   .get(indexCampsJSON)
 
 // router.route('/camp')

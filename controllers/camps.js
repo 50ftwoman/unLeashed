@@ -86,12 +86,24 @@ function indexCampsJSON(req, res) {
   })
 }
 
+// function campDetails(req, res) {
+//   var parkId = req.body.parkId
+//   http('http://api.amp.active.com/camping/campground/details?parkId=' + parkId + '&api_key=ura5qgpj5ggw29u64wewdv5f', function(err, response, body) {
+//     parseString(body, function (err, result) {
+//       console.dir(result)
+//       res.json(result)
+//       })
+//     })
+//   }
+
+
 module.exports = {
   searchCamp      : searchCamp,
   searchCampState : searchCampState,
   createCamp      : createCamp,
   deleteCamp      : deleteCamp,
   indexCamps      : indexCamps,
+  // campDetails     : campDetails,
 
   indexCampsJSON  : indexCampsJSON
 }

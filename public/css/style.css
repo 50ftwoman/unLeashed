@@ -28,3 +28,8 @@ li {
   padding: 10px;
   border: 1px solid black;
 }
+
+.camp-image{
+  height: 200px;
+  width: 300px;
+}
