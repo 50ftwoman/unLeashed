@@ -1,5 +1,5 @@
 angular
-  .module('campsApp', ['ui.router'])
+  .module('campsApp', ['ui.router', 'ui.bootstrap'])
     .config(MainRouter);
 
     // CampController.$inject = ['CampFactory']

@@ -1,0 +1,20 @@
+.search {
+  text-align: center;
+}
+
+
+a {
+  font-variant: small-caps;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.searchbox {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.nav {
+  margin: 5px;
+  margin-left: 10px;
+}

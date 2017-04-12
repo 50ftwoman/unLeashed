@@ -7,16 +7,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
    <!-- load ui-router -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
    <script src="./js/app.js"></script>
    <script src="./js/campsFactory.js"></script>
    <script src="./js/campsController.js"></script>
   </head>
   <body ng-controller="CampController as campCtrl">
-   <nav>
+
+   <nav class="navbar-default navbar-fixed-top">
+     <div class="nav">
       <a ui-sref="home">Home</a>
       <a ui-sref="search">Search</a>
       <a ui-sref="about">About</a>
+    </div>
     </nav>
+
+    <br><br>
 
     <main ui-view>
     </main>

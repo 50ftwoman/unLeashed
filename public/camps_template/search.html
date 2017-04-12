@@ -1,4 +1,15 @@
-<h1>this is search</h1>
-<form ng-submit="campCtrl.getCamps(campCtrl.state)">
-   <input ng-model="campCtrl.state" type="text">
-</form>
+<div class="search">
+
+  <h1>this is search</h1>
+
+  <div class="searchbox">
+  <form ng-submit="campCtrl.getCamps(campCtrl.state)">
+    <input class="form-control input-lg" placeholder="search by state" ng-model="campCtrl.state" type="text" />
+    <!-- <span class="input-group=btn"> -->
+    <button class="btn btn-info btn-lg" type="button">
+      <i class="glyphicon glyphicon-search"></i>
+    </button>
+  <!-- </span>  -->
+  </form>
+<!-- </div> -->
+</div>
