@@ -3,22 +3,30 @@
   <h1>this is search</h1>
 
   <div class="searchbox">
-  <form ng-submit="campCtrl.getCamps(campCtrl.state)">
-    <input class="form-control input-lg" placeholder="search by state" ng-model="campCtrl.state" type="text" />
-    <!-- <span class="input-group=btn"> -->
-    <button class="btn btn-info btn-lg" type="button">
-      <!-- <i class="glyphicon glyphicon-search"></i> -->
+    <form ng-submit="campCtrl.getCamps(campCtrl.state)">
+      <input class="form-control input-lg" placeholder="search by state" ng-model="campCtrl.state" type="text" />
+      <button class="btn btn-info btn-lg" type="button">
+      <i class="glyphicon glyphicon-search"></i>
     </button>
-  <!-- </span>  -->
-  </form>
-</div>
-<ul>
-  <li ng-repeat="camp in campCtrl.allCamps">
-    {{camp.facilityName}}
-    <img ng-src="{{'https://www.reserveamerica.com' + camp.faciltyPhoto}}">
-  </li>
-</ul>
+    </form>
+  </div>
 
+  <div class="row col-md-8">
+  </div>
+
+  <ul>
+    <!-- <div style="float: right" class="col-md-6"> -->
+    <li ng-repeat="camp in campCtrl.allCamps">
+      <div class="results">
+      <h3>{{camp.facilityName}}<h3>
+        <!-- <div style="float: left;" class="col-md-6" id="camp-image-box"> -->
+          <img ng-src="{{'https://www.reserveamerica.com' + camp.faciltyPhoto}}">
+          </li>
+        </div>
+      </div>
+  </ul>
+</div>
+</div>
 </div>
 
 

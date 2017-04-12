@@ -9,6 +9,10 @@ a {
   padding: 5px;
 }
 
+li {
+  list-style: none;
+}
+
 .searchbox {
   width: 400px;
   margin: 0 auto;
@@ -17,4 +21,10 @@ a {
 .nav {
   margin: 5px;
   margin-left: 10px;
+}
+
+.results {
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid black;
 }
