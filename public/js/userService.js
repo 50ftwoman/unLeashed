@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('campsApp')
   .factory('UserService', UserService)
 
 UserService.$inject = ['$q', '$timeout', '$http']
@@ -116,3 +116,4 @@ function UserService($q, $timeout, $http) {
     return deferred.promise
 
   }
+}

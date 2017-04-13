@@ -1,23 +1,24 @@
 
-<div class="loginform">
+<div class="loginform" ng-controller="SignupController as signupCtrl">
 <h2 id="signup">Sign Up</h2>
+  <div ng-show="signupCtrl.error" class="alert alert-danger">{{signupCtrl.errorMessage}}</div>
 <br>
 
 <form method="post" action="/signup">
 
   <div class="form-group">
     <label for="name">Name</label>
-    <input class="form-control" type="text" name="name" id="name">
+    <input class="form-control" type="text" name="name" ng-model="signupCtrl.signupForm.username" required>
   </div>
 
   <div class="form-group">
     <label for="email">Email</label>
-    <input class="form-control" type="text" name="email" id="email">
+    <input class="form-control" type="text" name="email" ng-model="signupCtrl.signupForm.email" required>
   </div>
 
   <div class="form-group">
     <label for="email">Password</label>
-    <input class="form-control" type="password" name="password" id="password">
+    <input class="form-control" type="password" name="password" ng-model="signupCtrl.signupForm.password" required>
   </div>
 
   <input class="btn btn-default" type="submit">

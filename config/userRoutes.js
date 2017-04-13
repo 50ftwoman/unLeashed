@@ -3,7 +3,7 @@ var express = require('express'),
     User    = require('../models/user.js')
     userRouter = express.Router()
 
-  userRouter.post('/signup', (req, res){
+  userRouter.post('/signup', function(req, res){
     User.register(new User({username: req.body.username}),
       req.body.password, function(err, account) {
         if(err) { return res.status(500).json({err}) }
@@ -13,7 +13,7 @@ var express = require('express'),
       })
   })
 
-  userRouter.post('/login', (req, res, next) {
+  userRouter.post('/login', function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
       if(err) return next(err)
       if(!user) return res.status(401).json({err : info})
