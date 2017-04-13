@@ -54,6 +54,9 @@ app.use('/', routes);
 var api_routes = require('./config/api_routes');
 app.use('/api/', api_routes);
 
+var userRoutes = require('./config/userRoutes');
+app.use('/users/', userRoutes)
+
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log('magic on port', port)

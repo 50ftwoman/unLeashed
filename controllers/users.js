@@ -1,4 +1,5 @@
 var passport = require('passport');
+var User = require('../models/user.js')
 
 //GET /signup
 function getSignup(req, res) {
@@ -39,10 +40,11 @@ function getLogout(req, res) {
 }
 
 function showUser(req, res) {
-	User.find({_id: req.params.id}, function(err, user){
+	User.find({_id: req.user.id}, function(err, user){
 		if (err) res.status(404).send(err)
 
-		res.status(200).send(users)
+		res.json(user)
+
 	})
 }
 
@@ -105,5 +107,6 @@ module.exports = {
 	postLogin: postLogin,
 	getLogout: getLogout,
 	getFacebook: getFacebook,
-	getFacebookCallback: getFacebookCallback
+	getFacebookCallback: getFacebookCallback,
+	getUser	: showUser
 }

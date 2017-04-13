@@ -27,6 +27,20 @@ p#hometext {
   margin-top: 100px;
 }
 
+h2.description {
+  font-family: 'Pacifico', cursive;
+}
+
+h2.directions {
+  font-family: 'Pacifico', cursive;
+
+}
+
+h2.activities {
+  font-family: 'Pacifico', cursive;
+
+}
+
 a {
   font-variant: small-caps;
   font-size: 15px;
@@ -47,6 +61,7 @@ li {
 .full {
    height: 800px;
    min-width: 1000px;
+   background-size: cover;
    background-image: url('../assets/splash.jpg');
  }
 
@@ -79,11 +94,13 @@ li {
 }
 
 .info {
-  margin: 100px;
+  padding-top: 100px;
+  margin: 0 auto;
+  width: 600px;
 }
 
 h1.description {
-  
+
 }
 
 .about {
