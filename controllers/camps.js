@@ -78,7 +78,7 @@ function indexCampsJSON(req, res) {
       console.dir(result)
       var top20 = []
       var results = result.resultset.result
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 12; i++) {
         top20.push(results[i]['$'])
       }
       res.json(top20)
