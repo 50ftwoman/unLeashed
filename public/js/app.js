@@ -13,7 +13,7 @@ angular
       $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: '../camps_template/home.html'
+          templateUrl: '../camps_template/home.html',
         })
         .state('search', {
           url: '/search',
@@ -30,6 +30,10 @@ angular
         .state('campinfo', {
           url: '/campinfo',
           templateUrl: '../camps_template/campinfo.html'
+        })
+        .state('profile', {
+          url: '/profile',
+          templateUrl: '../camps_template/profile.html'
         });
 
         $urlRouterProvider.otherwise('/');

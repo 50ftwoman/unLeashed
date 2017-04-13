@@ -1,20 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
-.search {
-  margin: 100px;
-  text-align: center;
-  align-items: center;
-  /*background-color: white;*/
-
-  /*margin: 0 auto;*/
-}
-
-h1.splashtext {
-  margin-top: 100px;
- font-family: 'Pacifico', cursive;
+/*.splashtext {
+  /*margin-top: 50px;*/
+ /*font-family: 'Pacifico', cursive;
  font-size: 180px;
  text-align: center;
  color: black;
+}*/
+
+#header-text {
+  margin-top: 40px;
+  margin-left: 200px;
+  position: absolute;
+  font-family: 'Pacifico', cursive;
+  font-size: 180px;
+  text-align: center;
+  color: black;
+}
+
+p#hometext {
+  /*font-family: 'Tahoma';*/
+  font-size: 25px;
+  color: white;
+  width: 350px;
+  margin-left: 620px;
+  margin-top: 100px;
 }
 
 a {
@@ -29,15 +39,37 @@ li {
   font-size: 30px;
 }
 
+.nav {
+  margin: 5px;
+  margin-left: 10px;
+}
+
+.full {
+   height: 800px;
+   min-width: 1000px;
+   background-image: url('../assets/splash.jpg');
+ }
+
+ .search {
+   margin: 100px;
+   text-align: center;
+   align-items: center;
+ }
+
 .searchbox {
   width: 400px;
   margin: 0 auto;
   /*display: inline-block;*/
 }
+.resultspage {
+  margin: 30px;
+}
 
-.nav {
-  margin: 5px;
-  margin-left: 10px;
+.results {
+  font-size: 30px;
+  font-variant: small-caps;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .loginform {
@@ -46,55 +78,14 @@ li {
   margin-top: 100px;
 }
 
-.results {
-  /*width: 100px;
-  height: 100px;*/
-  font-size: 30px;
-  font-variant: small-caps;
-  margin: 0 auto;
-  padding: 10px;
-  /*padding: 30px;*/
-
-}
-
-.resultspage {
-  /*align-items: center;*/
-  margin: 30px;
-  /*background-color: white;*/
-  /*height: 700px;*/
-  /*width: 500px;*/
-  /*overflow-y: scroll;*/
-  /*margin-left: 350px;*/
-  /*margin: 0 auto;*/
-  /*float: left;*/
-
-}
-
 .info {
   margin: 100px;
 }
 
-/*.home {
-  height: 1000px;
-  width: 1000px;
-}*/
-
-/*.camp-image{
-  height: 100px;
-  width: 100px;
-}*/
+h1.description {
+  
+}
 
 .about {
   margin: 100px;
 }
-
-/*body, html {
-  height: 100%;
-  width: 100%;
-}*/
-
-.full {
-   height : 700px;
-    margin: 0px;
-   background-image: url('../assets/splash.jpg');
- }

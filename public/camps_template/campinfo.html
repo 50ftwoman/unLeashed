@@ -1,9 +1,17 @@
 <div class="info">
-<h2>Description:</h2>
+
+<!-- <div nxg-controller="CampController as campCtrl"> -->
+
+<h1 class="camp-name">{{campCtrl.facilityName}}</h1>
+<!-- </div> -->
+
+<h2 class="description">Description:</h2>
 <p>{{campCtrl.selectedCamp.description}}</p>
 
-<h2>Driving Directions:</h2>
+<h2 class="directions">Driving Directions:</h2>
 <p>{{campCtrl.selectedCamp.drivingDirection}}</p>
 <!-- sfagsfdg -->
-<h2>Activities:</h2>
+<h2 class="activities">Activities:</h2>
 <p>{{campCtrl.selectedCamp.recreationDescription}}</p>
+
+</div>

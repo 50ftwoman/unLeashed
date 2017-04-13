@@ -5,7 +5,7 @@ var express    = require('express'),
     passport   = require('passport')
 
 var {campDetails, indexCampsJSON} = require('../controllers/camps');
-
+var {indexUsers} = require('../controllers/api.js');
 
 
 // function authenticatedUser(req, res, next) {
@@ -14,13 +14,13 @@ var {campDetails, indexCampsJSON} = require('../controllers/camps');
 //   res.redirect('/');
 // }
 
+router.route('/users')
+  .get(indexUsers)
+
   router.route('/')
   .get(indexCampsJSON)
 
 router.route('/camp')
   .get(campDetails);
-//
-// router.route('/camp/:id')
-//   .delete(deleteCamp)
 
 module.exports = router

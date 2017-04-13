@@ -2,31 +2,26 @@
 
   <h1>this is search</h1>
 
-
   <div class="searchbox">
-
     <form ng-submit="campCtrl.getCamps(campCtrl.state)">
       <input class="form-control input-lg" placeholder="search by state" ng-model="campCtrl.state" type="text">
       <button class="btn btn-info btn-lg" type="button">
       <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
     </button>
     </form>
-
   </div>
 
 
   <div class="resultspage">
-  <ul>
-    <!-- <div style="float: right" class="col-md-6"> -->
-    <li ng-repeat="camp in campCtrl.allCamps">
-      <div class="row col-md-4">
-      <div class="results">
-      <a ui-sref="campinfo" ng-click="campCtrl.setSelectedCamp(camp)">{{camp.facilityName}}</a>
-        <!-- <div style="float: left;" class="col-md-6" id="camp-image-box"> -->
-          <!-- <img class="camp-image" ng-src="{{'https://www.reserveamerica.com' + camp.faciltyPhoto}}"> -->
-        </div>
-          </li>
-      </ul>
+    <ul>
+      <li ng-repeat="camp in campCtrl.allCamps">
+        <div class="row col-md-4">
+          <div class="results">
+            <a ui-sref="campinfo" ng-click="campCtrl.setSelectedCamp(camp)">{{camp.facilityName}}</a>
+            <!-- <img class="camp-image" ng-src="{{'https://www.reserveamerica.com' + camp.faciltyPhoto}}"> -->
+          </div>
+      </li>
+    </ul>
     </div>
   </div>
 </div>

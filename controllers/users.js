@@ -38,6 +38,36 @@ function getLogout(req, res) {
 	res.redirect('/');
 }
 
+function showUser(req, res) {
+	User.find({_id: req.params.id}, function(err, user){
+		if (err) res.status(404).send(err)
+
+		res.status(200).send(users)
+	})
+}
+
+function updateUser(req, res) {
+	User.findbyId({_id: req.params.id}, function(err, user) {
+		if(err) res.status(404).send(err)
+
+		if(req.body.name) user.name = req.body.name
+		if(req.body.email) user.email = req.body.email
+
+		user.save(function(err) {
+			if(err) res.status(500).send(err)
+
+			res.status(200).send(user)
+		})
+	})
+}
+
+function destroy(req, res) {
+	User.remove({_id: req.params.id}, function(err) {
+		if(err) res.status(500).send(err)
+
+		res.status(200).send({message: "account deleted"})
+	})
+}
 
  // =====================================
  // FACEBOOK ACTIONS=====================
