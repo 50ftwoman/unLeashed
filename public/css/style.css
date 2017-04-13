@@ -13,7 +13,7 @@ h1.splashtext {
  font-family: 'Pacifico', cursive;
  font-size: 180px;
  text-align: center;
- color: white;
+ color: black;
 }
 
 a {
@@ -68,7 +68,9 @@ li {
 
 }
 
-
+.info {
+  margin: 100px;
+}
 
 /*.home {
   height: 1000px;
