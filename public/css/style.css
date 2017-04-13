@@ -10,6 +10,7 @@
 }
 
 h1.splashtext {
+  margin-top: 100px;
  font-family: 'Pacifico', cursive;
  font-size: 180px;
  text-align: center;
@@ -42,6 +43,7 @@ li {
 .loginform {
   width: 500px;
   margin: 0 auto;
+  margin-top: 100px;
 }
 
 .results {
@@ -81,6 +83,10 @@ li {
   height: 100px;
   width: 100px;
 }*/
+
+.about {
+  margin: 100px;
+}
 
 body, html {
   height: 100%;
