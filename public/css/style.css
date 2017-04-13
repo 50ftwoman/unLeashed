@@ -88,13 +88,13 @@ li {
   margin: 100px;
 }
 
-body, html {
+/*body, html {
   height: 100%;
   width: 100%;
-}
+}*/
 
-/*.full {
-   height : 100%;
-
+.full {
+   height : 700px;
+    margin: 0px;
    background-image: url('../assets/splash.jpg');
- }*/
+ }
