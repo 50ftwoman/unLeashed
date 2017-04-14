@@ -1,4 +1,4 @@
-<div class="search">
+<div class="search" ng-controller="CampController as campCtrl">
 
   <h1>this is search</h1>
 
@@ -17,7 +17,8 @@
       <li ng-repeat="camp in campCtrl.allCamps">
         <div class="row col-md-4">
           <div class="results">
-            <a ui-sref="campinfo" ng-click="campCtrl.setSelectedCamp(camp)">{{camp.facilityName}}</a>
+            <button ng-click="campCtrl.setSelectedCamp(camp)">{{camp.facilityName}}</button>
+
             <!-- <img class="camp-image" ng-src="{{'https://www.reserveamerica.com' + camp.faciltyPhoto}}"> -->
           </div>
       </li>

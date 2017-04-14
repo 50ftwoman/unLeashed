@@ -7,7 +7,7 @@ angular.module('campsApp')
 LoginController.$inject = ['$state', 'UserService']
 LogoutController.$inject = ['$state', 'UserService']
 SignupController.$inject = ['$state', 'UserService']
-UsersController.$inject = ["$http"]
+UsersController.$inject = ["$http", "$scope"]
 
 function LoginController($state, UserService){
   var self = this
@@ -40,7 +40,7 @@ function LogoutController($state, UserService) {
   // call logout from service
   UserService.logout()
     .then(function () {
-      $state.go('login')
+      $state.go('home')
     })
 }
 
@@ -71,8 +71,11 @@ function SignupController($state, UserService) {
   }
 }
 
-function UsersController($http){
-  var self     = this
+function UsersController($http, $scope){
+  var self = this
+  self.currentUser = $scope.$parent.currentUser
+  console.log(self.currentUser)
+
   self.all     = []
   self.newUser = {}
 

@@ -9,19 +9,19 @@ function getSignup(req, res) {
 function postSignup(req, res) {
 	console.log(req.params)
 
-	var signUpStrategy = passport.authenticate('local-signup', {
-		successRedirect: '/#/home',
-		failureRedirect: '/#/signup',
-		failureFlash: true
+	var signUpStrategy = passport.authenticate('local-signup', function(err, user) {
+
+		res.json(user)
 	});
 
 	return signUpStrategy(req, res)
 }
-
-function getLogin(req, res) {
-	console.log('logged in')
-	res.render('login.html', { message: req.flash('loginMessage') });
-}
+//
+// function getLogin(req, res) {
+// 	console.log('logged in')
+// 	// res.render('login.html', { message: req.flash('loginMessage') });
+// 	res.json({ message: 'getLogin does something' });
+// }
 
 function postLogin(req, res) {
 	var loginProperty = passport.authenticate('local-login', {
@@ -40,7 +40,7 @@ function getLogout(req, res) {
 }
 
 function showUser(req, res) {
-	User.find({_id: req.user.id}, function(err, user){
+	User.findById(req.user.id, function(err, user){
 		if (err) res.status(404).send(err)
 
 		res.json(user)
@@ -103,7 +103,7 @@ module.exports = {
 	home : home,
 	getSignup: getSignup,
 	postSignup: postSignup,
-	getLogin: getLogin,
+	// getLogin: getLogin,
 	postLogin: postLogin,
 	getLogout: getLogout,
 	getFacebook: getFacebook,

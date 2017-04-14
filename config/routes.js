@@ -4,7 +4,7 @@ var express    = require('express'),
     bodyParser = require('body-parser'),
     passport   = require('passport')
 
-var {getUser, getSignup, postSignup, getLogin, postLogin, getLogout, getFacebook, getFacebookCallback} = require('../controllers/users'),
+var {getUser, getSignup, postSignup, postLogin, getLogout, getFacebook, getFacebookCallback} = require('../controllers/users'),
     {indexUsers} = require('../controllers/api'),
     {indexCamps, searchCamp, searchCampState, createCamp, deleteCamp} = require('../controllers/camps');
 
@@ -19,15 +19,17 @@ router.route('/signup')
 	.post(postSignup);
 
 router.route('/login')
-	.get(getLogin)
+	// .get(getLogin)
 	.post(postLogin);
 
 router.route('/profile')
   .get(getUser)
+  .post(createCamp);
 
 router.route('/')
   .get(indexCamps)
-  .post(createCamp);
+
+
 
 router.route('/:id')
   .delete(deleteCamp);

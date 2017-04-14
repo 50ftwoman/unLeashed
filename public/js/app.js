@@ -33,11 +33,19 @@ angular
         })
         .state('campinfo', {
           url: '/campinfo',
-          templateUrl: '../camps_template/campinfo.html'
+          templateUrl: '../camps_template/campinfo.html',
+          params: {
+            selectedCamp : null
+          }
+        })
+        .state('logout', {
+          url: '/logout',
+          controller: 'LogoutController'
         })
         .state('profile', {
           url: '/profile',
-          templateUrl: '../camps_template/profile.html'
+          templateUrl: '../camps_template/profile.html',
+          restricted: true
         });
 
         $urlRouterProvider.otherwise('/');

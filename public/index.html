@@ -14,9 +14,10 @@
    <script src="./js/campsController.js"></script>
    <script src="./js/userController.js"></script>
    <script src="./js/userService.js"></script>
+   <script src="./js/mainController.js"></script>
 
   </head>
-  <body ng-controller="CampController as campCtrl">
+  <body ng-controller="MainController">
 
 
 
@@ -24,11 +25,12 @@
    <nav class="navbar-default navbar-fixed-top">
      <div class="nav">
       <a ui-sref="home">Home</a>
-      <a ng-show="self.UserService.isLoggedIn()" ui-sref="signup">Signup</a>
-      <a ui-sref="login">Login</a>
+      <a ng-hide="isLoggedIn()" ui-sref="signup">Signup</a>
+      <a ng-hide="isLoggedIn()" ui-sref="login">Login</a>
       <a ui-sref="search">Search</a>
       <a ui-sref="about">About</a>
-      <a ng-show"self.UserService.isLoggedIn()" ui-sref="profile">Profile</a>
+      <a ng-show="isLoggedIn()" ui-sref="logout">Logout</a>
+      <a ng-show="isLoggedIn()" ui-sref="profile">Profile</a>
     </div>
     </nav>
     <main ui-view>

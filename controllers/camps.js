@@ -40,13 +40,13 @@ function createCamp(req, res) {
   User.findById(req.user._id, function(err, user) {
     if (err) throw err;
 
-    users.camps.push({
-      name       : req.body.facilityName,
-      state      : req.body.state
-    });
+    var newCamp = new Camp(req.body)
+
+    users.camps.push(newCamp);
 
     user.save(function(err, user) {
       if (err) throw err;
+      res.json(user)
     });
   });
 }

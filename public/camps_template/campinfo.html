@@ -1,17 +1,18 @@
-<div class="info">
+<div class="info" ng-controller="CampController as campCtrl">
 
-<!-- <div nxg-controller="CampController as campCtrl"> -->
+  <!-- <div nxg-controller="CampController as campCtrl"> -->
 
-<h1 class="camp-name">{{campCtrl.selectedCamp.facility}}</h1>
-<!-- </div> -->
+  <h1 class="camp-name">{{campCtrl.selectedCamp.facility}}</h1>
+  <!-- </div> -->
 
-<h2 class="description">Description:</h2>
-<p>{{campCtrl.selectedCamp.description}}</p>
+  <h2 class="description">Description:</h2>
+  <p>{{campCtrl.selectedCamp.description}}</p>
 
-<h2 class="directions">Driving Directions:</h2>
-<p>{{campCtrl.selectedCamp.drivingDirection}}</p>
-<!-- sfagsfdg -->
-<h2 class="activities">Activities:</h2>
-<p>{{campCtrl.selectedCamp.recreationDescription}}</p>
+  <h2 class="directions">Driving Directions:</h2>
+  <p>{{campCtrl.selectedCamp.drivingDirection}}</p>
+  <!-- sfagsfdg -->
+  <h2 class="activities">Activities:</h2>
+  <p>{{campCtrl.selectedCamp.recreationDescription}}</p>
 
+  <button ng-click="campCtrl.addCamp()">favorite</button>
 </div>

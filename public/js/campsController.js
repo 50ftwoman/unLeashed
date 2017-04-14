@@ -2,36 +2,56 @@ angular
   .module('campsApp')
   .controller('CampController', CampController)
 
-CampController.$inject = ['CampFactory']
+CampController.$inject = ['$http', 'CampFactory', 'UserService', '$state', '$stateParams']
 
-function CampController(CampFactory) {
-var self = this
-self.allCamps = []
-self.getCamps = getCamps
-// self.selectedCamp = "test"
-self.setSelectedCamp = setSelectedCamp
-// self.test = "test"
+function CampController($http, CampFactory, UserService, $state, $stateParams) {
+  var self = this
+  self.allCamps = []
+  self.getCamps = getCamps
+  // self.selectedCamp = "test"
+  self.setSelectedCamp = setSelectedCamp
+  // self.test = "test"
+  if ($stateParams != null) {
+    self.selectedCamp = $stateParams.selectedCamp
+  }
+  console.log($stateParams)
 
-function getCamps(state) {
-  var state = state.toUpperCase()
-  CampFactory.index(state)
-  .success(function(data) {
-    self.allCamps = data
-    console.log(self.allCamps)
-    console.log(self.allCamps[1])
-  });
-}
+  function getCamps(state) {
+    self.state = state.toUpperCase()
+    CampFactory.index(self.state)
+      .success(function(data) {
+        self.allCamps = data
+        console.log(self.allCamps)
+        console.log(self.allCamps[1])
+      });
+  }
 
+  function addCamp() {
+    var camp = {
+      facilityName: self.selectedState.facility,
+      stateName: self.state,
+      description: self.selectedState.description
+    }
+    $http.post('/profile', camp)
+      .then(function(data) {
+        console.log(data)
+      })
+  }
 
-function setSelectedCamp(camp) {
-  // console.log(camp.facilityID)
-  // console.log(camp.contractID)
-  CampFactory.show(camp)
-    .success(function(data) {
-      self.selectedCamp = data.detailDescription['$']
-      console.log(self.selectedCamp)
-    })
-}
+  function setSelectedCamp(camp) {
+    // console.log(camp.facilityID)
+    // console.log(camp.contractID)
+    CampFactory.show(camp)
+      .success(function(data) {
+        self.selectedCamp = data.detailDescription['$']
+        console.log(self.selectedCamp)
+        redirect(self.selectedCamp)
+      })
+  }
+
+  function redirect(camp) {
+    $state.go('campinfo', {selectedCamp: camp})
+  }
 }
 
 

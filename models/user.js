@@ -12,7 +12,7 @@ var userSchema = mongoose.Schema({
   },
   facebook : {
     id       : String,
-    toke     : String,
+    token     : String,
     email    : String,
     name     : String
   },

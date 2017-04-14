@@ -21,6 +21,11 @@ require('dotenv').config();
 var db = process.env.MONGODB_URI || 'mongodb://localhost/unleashed';
 mongoose.connect(db);
 
+var store = new MongoDBStore({
+  uri: db,
+  collection: 'sessions'
+});
+
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public/')));
@@ -34,7 +39,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
-app.use(session({ secret: 'unleashed', cookie: {maxAge: 14400000} }));
+app.use(session({
+  secret: 'unleashed',
+  cookie: {maxAge: 14400000},
+  resave: true,
+  saveUninitialized: false,
+  store: store
+  }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -44,6 +55,7 @@ require('./config/passport')(passport);
 //
 app.use(function (req, res, next) {
   global.user = req.user;
+  console.log(user)
   next();
 })
 
