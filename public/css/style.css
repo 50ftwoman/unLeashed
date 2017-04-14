@@ -27,6 +27,10 @@ p#hometext {
   margin-top: 100px;
 }
 
+h1.camp-name {
+  text-decoration: underline;
+}
+
 h2.description {
   font-family: 'Pacifico', cursive;
 }
