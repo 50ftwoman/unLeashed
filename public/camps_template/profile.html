@@ -8,9 +8,15 @@
     <div class="favorites">
       <li class="favs" ng-repeat="camps in currentUser.camps">
         <br>
-        {{camps.facilityName}}
+
+        <h2 class="profile-camp">{{camps.facilityName}}</h2>
         <br><br>
         {{camps.description}}
+        <br>
+        <!-- <a href={{camps.fullReservationUrl}}>Reservations</a> -->
+        <hr>
       </li>
+      <br>
     </div>
   </div>
+</div>
