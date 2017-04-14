@@ -1,13 +1,16 @@
+<div class="profile">
 <div ng-controller="UsersController as usersCtrl">
-<br><br><br><br>
 
-<div class="username">
+    <div class="username">
+      {{currentUser.local.name || currentUser.facebook.name}}
+    </div>
 
-{{currentUser.local.name || currentUser.facebook.name}}
-</div>
-
-<!-- {{currentUser.camps[1].facilityName}} -->
-<li class="favs" ng-repeat="camps in currentUser.camps">
-  {{camps.facilityName}}
-</li>
-</div>
+    <div class="favorites">
+      <li class="favs" ng-repeat="camps in currentUser.camps">
+        <br>
+        {{camps.facilityName}}
+        <br><br>
+        {{camps.description}}
+      </li>
+    </div>
+  </div>
