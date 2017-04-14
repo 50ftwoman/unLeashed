@@ -6,6 +6,7 @@ var express    = require('express'),
 
 var {campDetails, indexCampsJSON} = require('../controllers/camps');
 var {indexUsers} = require('../controllers/api.js');
+var {getUser} = require('../controllers/users.js');
 
 
 // function authenticatedUser(req, res, next) {
@@ -13,6 +14,9 @@ var {indexUsers} = require('../controllers/api.js');
 //
 //   res.redirect('/');
 // }
+
+router.route('/api/me')
+  .get(getUser)
 
 router.route('/users')
   .get(indexUsers)
