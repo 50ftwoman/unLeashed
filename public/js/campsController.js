@@ -10,6 +10,7 @@ function CampController($http, CampFactory, UserService, $state, $stateParams) {
   self.getCamps = getCamps
   // self.selectedCamp = "test"
   self.setSelectedCamp = setSelectedCamp
+  self.addCamp = addCamp
   // self.test = "test"
   if ($stateParams != null) {
     self.selectedCamp = $stateParams.selectedCamp
@@ -27,10 +28,12 @@ function CampController($http, CampFactory, UserService, $state, $stateParams) {
   }
 
   function addCamp() {
+
+
     var camp = {
-      facilityName: self.selectedState.facility,
+      facilityName: self.selectedCamp.facility,
       stateName: self.state,
-      description: self.selectedState.description
+      description: self.selectedCamp.description
     }
     $http.post('/profile', camp)
       .then(function(data) {

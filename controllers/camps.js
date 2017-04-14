@@ -42,7 +42,7 @@ function createCamp(req, res) {
 
     var newCamp = new Camp(req.body)
 
-    users.camps.push(newCamp);
+    user.camps.push(newCamp);
 
     user.save(function(err, user) {
       if (err) throw err;
