@@ -66,7 +66,7 @@ li {
  }
 
  .search {
-   margin: 100px;
+   margin-top: 100px;
    text-align: center;
    align-items: center;
  }
@@ -74,18 +74,28 @@ li {
 .searchbox {
   width: 400px;
   margin: 0 auto;
+  padding: 0px;
   /*display: inline-block;*/
 }
 .resultspage {
-  margin: 30px;
+  margin: 0 auto;
+  padding: 50px;
 }
 
 .results {
-  font-size: 30px;
+  /*font-size: 30px;*/
   font-variant: small-caps;
   margin: 0 auto;
+
   padding: 10px;
+  /*width: 60px;
+  height: 60px;*/
 }
+
+/*button.searchbutton {
+  height: 60px !important;
+  width: 60px !important;
+}*/
 
 .loginform {
   width: 500px;

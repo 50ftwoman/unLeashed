@@ -17,7 +17,7 @@
       <li ng-repeat="camp in campCtrl.allCamps">
         <div class="row col-md-4">
           <div class="results">
-            <button ng-click="campCtrl.setSelectedCamp(camp)">{{camp.facilityName}}</button>
+            <button class="btn btn-info btn-lg" id="searchbutton" ng-click="campCtrl.setSelectedCamp(camp)">{{camp.facilityName}}</button>
 
             <!-- <img class="camp-image" ng-src="{{'https://www.reserveamerica.com' + camp.faciltyPhoto}}"> -->
           </div>

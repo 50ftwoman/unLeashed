@@ -11,7 +11,7 @@ function postSignup(req, res) {
 
 	var signUpStrategy = passport.authenticate('local-signup', function(err, user) {
 
-		res.json(user)
+		res.redirect('/')
 	});
 
 	return signUpStrategy(req, res)
